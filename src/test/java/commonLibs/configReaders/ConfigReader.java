@@ -13,7 +13,7 @@ public class ConfigReader {
 
     public String getProp(String nameFileProperties, String nameProp) {
         Properties properties = new Properties();
-        //FileInputStream fileInputStream;
+
         FileInputStream fileInputStream = null;
         try {
             fileInputStream = new FileInputStream("config/" + nameFileProperties + ".properties");
