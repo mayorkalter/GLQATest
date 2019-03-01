@@ -1,5 +1,6 @@
 package tests.api.contacts;
 
+import commonLibs.api.ContactsAPI;
 import commonLibs.api.GetContactsAPI;
 import commonLibs.utils.CommonFunc;
 import io.restassured.response.Response;
@@ -9,7 +10,7 @@ import tests.api.BaseTest;
 public class GetContactsTest extends BaseTest {
 
     GetContactsAPI restapi=new GetContactsAPI();
-    CommonFunc commonFunc=new CommonFunc();
+    ContactsAPI cntactsApi=new ContactsAPI();
 
 
     @Test(description = "Test Get contacts all endpoint.")
@@ -28,7 +29,12 @@ public class GetContactsTest extends BaseTest {
     public void getContactIdTest() {
         int id =2;
         Response res=restapi.getContactId(id);
+//        Map<String,String> userData=commonFunc.user();
+//        userData.put("firstName","Sol");
+//        userData.put("lastName","Fenrir");
+//        userData.put("email","fen@baldr.hel");
         commonFunc.checkStatusCode(res, 200);
+        cntactsApi.checkUserInfo(res, userData.userChangeData("id=2&firstName=Ymir&lastName=Fenrir&email=fen@baldr.hel"));
     }
 
 }

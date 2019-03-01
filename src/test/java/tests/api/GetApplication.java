@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 public class GetApplication extends BaseTest {
 
     GetApplicationWSDL restapi=new GetApplicationWSDL();
-    CommonFunc commonFunc=new CommonFunc();
     @Test(description = "Test Get application.wsdl endpoint.")
     public void getApplicationTest() {
         Response res = restapi.getApplication();

@@ -1,20 +1,17 @@
 package commonLibs.api;
 
-import commonLibs.utils.CommonFunc;
 import io.restassured.response.Response;
 import org.testng.Assert;
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
-public class GetContactsAPI extends BaseAPI {
-
-    CommonFunc commonFunc=new CommonFunc();
+public class GetContactsAPI extends ContactsAPI {
 
     public Response getContactId(int id) {
-
         Response res=given().get(contactsUrl+"/"+id);
-        commonFunc.checkUserInfo(res, commonFunc.user());
-        commonFunc.checkUrl(res,id);
+        checkUrl(res,id);
         return res;
     }
 
