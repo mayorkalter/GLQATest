@@ -1,5 +1,6 @@
 package tests.api.contacts;
 
+import commonLibs.api.BaseAPI;
 import commonLibs.api.ChangeContactsAPI;
 import commonLibs.utils.CommonFunc;
 import commonLibs.utils.UserData;
@@ -13,14 +14,14 @@ public class ChangeContacts extends BaseTest {
     @Test(description = "Test Post contacts ID endpoint.")
     public void postContactIdTest() {
         Response res=restapi.postContactId(userData.user());
-        commonFunc.checkStatusCode(res, 201);
+        baseAPI.checkStatusCode(res, 201);
     }
 
     @Test(description = "Test PUT contacts ID endpoint.")
     public void putContactId() {
 
         Response res=restapi.putContactId(userData.user());
-        commonFunc.checkStatusCode(res, 200);
+        baseAPI.checkStatusCode(res, 200);
 
     }
 
@@ -29,7 +30,7 @@ public class ChangeContacts extends BaseTest {
     public void patchContactIdTest() {
 
         Response res=restapi.patchContactId(userData.userChangeData("id=2&firstName=Ymir"));
-        commonFunc.checkStatusCode(res, 200);
+        baseAPI.checkStatusCode(res, 200);
 
     }
 

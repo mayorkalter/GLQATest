@@ -11,7 +11,7 @@ public class GetApplication extends BaseTest {
     @Test(description = "Test Get application.wsdl endpoint.")
     public void getApplicationTest() {
         Response res = restapi.getApplication();
-        commonFunc.checkStatusCode(res, 200);
+        baseAPI.checkStatusCode(res, 200);
     }
 
 }

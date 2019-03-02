@@ -16,7 +16,7 @@ public class GetContactsTest extends BaseTest {
     @Test(description = "Test Get contacts all endpoint.")
     public void getContactsTest(){
         Response res=restapi.getContacts();
-        commonFunc.checkStatusCode(res, 200);
+        baseAPI.checkStatusCode(res, 200);
     }
 
 
@@ -29,11 +29,7 @@ public class GetContactsTest extends BaseTest {
     public void getContactIdTest() {
         int id =2;
         Response res=restapi.getContactId(id);
-//        Map<String,String> userData=commonFunc.user();
-//        userData.put("firstName","Sol");
-//        userData.put("lastName","Fenrir");
-//        userData.put("email","fen@baldr.hel");
-        commonFunc.checkStatusCode(res, 200);
+        baseAPI.checkStatusCode(res, 200);
         cntactsApi.checkUserInfo(res, userData.userChangeData("id=2&firstName=Ymir&lastName=Fenrir&email=fen@baldr.hel"));
     }
 

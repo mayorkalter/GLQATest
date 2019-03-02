@@ -8,10 +8,14 @@ import org.testng.Assert;
 
 public class BaseAPI {
     CommonFunc commonFunc=new CommonFunc();
-    UserData userData=new UserData();
     PathCreater path=new PathCreater();
     String contactsUrl=path.getUrl("contactsPath");
     String applicationUrl=path.getUrl("application");
     String healthCheckUrl=path.getUrl("helthCheckPath");
+    public void checkStatusCode(Response res, int status){
+        int statusCode = res.getStatusCode();
+        Assert.assertEquals(statusCode, status);
+    }
+
 
 }

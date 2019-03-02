@@ -43,14 +43,14 @@ public class CommonFunc {
     }
 
 
-    public void checkStatusCode(Response res, int status){
-        int statusCode = res.getStatusCode();
-        Assert.assertEquals(statusCode, status);
-    }
-
-    public RequestSpecification request(Map<String,String> userDetails){
-        RequestSpecification req = given().header("Content-Type", "application/json").body(userDetails);
-        return req;
-    }
+//    public void checkStatusCode(Response res, int status){
+//        int statusCode = res.getStatusCode();
+//        Assert.assertEquals(statusCode, status);
+//    }
+//
+//    public RequestSpecification request(Map<String,String> userDetails){
+//        RequestSpecification req = given().header("Content-Type", "application/json").body(userDetails);
+//        return req;
+//    }
 
 }
